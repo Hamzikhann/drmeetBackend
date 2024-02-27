@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+// require("dotenv").config();
 
 function Emergency() {
 	const [directionsService, setDirectionsService] = useState(null);
@@ -20,10 +21,11 @@ function Emergency() {
 	const handlespecialitychange = (event) => {
 		setSpeciality(event.target.value);
 	};
-
+	console.log(process.env.REACT_APP_GOOGLSAPIKEY);
 	useEffect(() => {
 		const script = document.createElement("script");
-		script.src = process.env.GOOGLSAPIKEY;
+		script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLSAPIKEY}`;
+		console.log(script);
 		script.async = true;
 		script.defer = true;
 		document.head.appendChild(script);
