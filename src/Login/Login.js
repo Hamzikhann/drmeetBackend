@@ -25,7 +25,7 @@ export default function Login({ login }) {
 					<div className="text-center">
 						<div className=" space-y-2">
 							<h3 className="text-blue-400 text-2xl font-bold sm:text-3xl">Log in to your account</h3>
-							<Link to={"/Register"}>
+							<Link to={"/register"}>
 								<p className="font-medium text-blue-400 hover:text-indigo-500">Don't have an account? Sign up</p>
 							</Link>
 						</div>

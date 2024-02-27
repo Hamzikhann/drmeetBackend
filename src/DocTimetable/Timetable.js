@@ -138,7 +138,7 @@ const Timetable = ({ ada }) => {
 								});
 							notify();
 						}, 1000);
-						navigate("/Login");
+						navigate("/login");
 					} else {
 						setTimeout(() => {
 							let message = response.data ? response.data.message : response.message;
@@ -155,7 +155,7 @@ const Timetable = ({ ada }) => {
 								});
 							notify();
 						}, 3000);
-						navigate("/Doctor_info");
+						navigate("/doctorinfo");
 					}
 				}
 			})

@@ -11,7 +11,7 @@ export default function Navbar() {
 
 	const navigation = [
 		{ title: "Home", path: "/" },
-		{ title: "Contact Us", path: "/Contact" },
+		{ title: "Contact Us", path: "/contact" },
 		{
 			title: "Emergency",
 			path: "/emergency"
@@ -94,7 +94,7 @@ export default function Navbar() {
 							{isDoctorLoggedIn ? (
 								<li>
 									<Link
-										to="/Doctor_info"
+										to="/doctorinfo"
 										href="javascript:void(0)"
 										className="block py-3 text-center text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none"
 									>
@@ -107,7 +107,7 @@ export default function Navbar() {
 							{isPatientLoggedIn ? (
 								<li>
 									<Link
-										to="/Patientinfo"
+										to="/patientinfo"
 										href="javascript:void(0)"
 										className="block py-3 text-center text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none"
 									>
@@ -120,7 +120,7 @@ export default function Navbar() {
 							<li>
 								{token ? (
 									<Link
-										to="/Login"
+										to="/login"
 										onClick={logout}
 										href="javascript:void(0)"
 										className="block py-3 text-center text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none"
@@ -129,7 +129,7 @@ export default function Navbar() {
 									</Link>
 								) : (
 									<Link
-										to="/Login"
+										to="/login"
 										href="javascript:void(0)"
 										className="block py-3 text-center text-gray-700 hover:text-indigo-600 border rounded-lg md:border-none"
 									>
@@ -139,7 +139,7 @@ export default function Navbar() {
 							</li>
 							<li>
 								<Link
-									to="/Register"
+									to="/register"
 									href="javascript:void(0)"
 									className="block py-3 px-4 font-medium text-center text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 active:shadow-none rounded-lg shadow md:inline"
 								>

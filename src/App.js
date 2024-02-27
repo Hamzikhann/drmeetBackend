@@ -132,9 +132,9 @@ function App() {
 
 	const navigateToForm = (newUser) => {
 		if (newUser.select == "Doctor") {
-			navigate("/Timetable", { state: { email: newUser.registerEmail } });
+			navigate("/timetable", { state: { email: newUser.registerEmail } });
 		} else if (newUser.select == "Patient") {
-			navigate("/Login");
+			navigate("/login");
 		}
 	};
 
@@ -147,11 +147,11 @@ function App() {
 			ids.push(e.id);
 		});
 		setfilterdoctors(doctors);
-		navigate("/searchedDoctor", { state: { id: ids } });
+		navigate("/searcheddoctor", { state: { id: ids } });
 	};
 
 	const oncardclick = (id) => {
-		navigate("/Doctor_info", { state: { id, location: "oncardclick" } });
+		navigate("/doctorinfo", { state: { id, location: "oncardclick" } });
 	};
 
 	// API Started below
@@ -188,7 +188,7 @@ function App() {
 						notify();
 					}, 3000);
 
-					navigate("/Doctor_info", { state: { id, location: "app auth" } });
+					navigate("/doctorinfo", { state: { id, location: "app auth" } });
 				} else if (response.data.select == 2) {
 					sessionStorage.setItem("select", response.data.select);
 					sessionStorage.setItem("pid", response.data.patient.id);
@@ -210,7 +210,7 @@ function App() {
 						notify();
 					}, 3000);
 
-					navigate("/Patientinfo", { state: { id } });
+					navigate("/patientinfo", { state: { id } });
 				}
 			})
 			.catch((err) => {
@@ -377,17 +377,17 @@ function App() {
 			<Navbar />
 			<Routes>
 				<Route path="/" element={<Home match={match} aad={doctor} oncardclick={oncardclick} />} />
-				<Route path="/Login" element={<Login login={login} />} />
-				<Route path="/Register" element={<Register addnewuser={addnewuser} />} />
+				<Route path="/login" element={<Login login={login} />} />
+				<Route path="/register" element={<Register addnewuser={addnewuser} />} />
 				<Route
-					path="/Doctor_info"
+					path="/doctorinfo"
 					element={<Doctor_info patientAppointment={patientAppointment} setAuthHeader={setAuthHeader} />}
 				/>
-				<Route path="/Patientinfo" element={<Patientinfo patient={patient} patientAppoint={patientAppoint} />} />
-				<Route path="/Timetable" element={<Timetable />} />
-				<Route path="/DoctorProfile" element={<DoctorProfile fd={filterdoctors} oncardclick={oncardclick} />} />
-				<Route path="/Contact" element={<Contact />} />
-				<Route path="/searchedDoctor" element={<SearchedDoctor oncardclick={oncardclick} match={match} />} />
+				<Route path="/patientinfo" element={<Patientinfo patient={patient} patientAppoint={patientAppoint} />} />
+				<Route path="/timetable" element={<Timetable />} />
+				<Route path="/doctorprofile" element={<DoctorProfile fd={filterdoctors} oncardclick={oncardclick} />} />
+				<Route path="/contact" element={<Contact />} />
+				<Route path="/searcheddoctor" element={<SearchedDoctor oncardclick={oncardclick} match={match} />} />
 				<Route path="/emergency" element={<Emergency />} />
 			</Routes>
 			<Footer />

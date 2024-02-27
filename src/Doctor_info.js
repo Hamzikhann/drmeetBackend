@@ -184,7 +184,7 @@ export default function Doctor_info({ setAuthHeader, patientAppointment }) {
 	};
 
 	const navigateToUpdateAppointment = (id) => {
-		navigate("/Timetable", { state: { id: id } });
+		navigate("/timetable", { state: { id: id } });
 	};
 
 	const activateTheEmergency = (emergencyAppointmentId, emergencyId, flag = 0, index) => {
