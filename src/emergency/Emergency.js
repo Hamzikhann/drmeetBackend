@@ -23,7 +23,7 @@ function Emergency() {
 
 	useEffect(() => {
 		const script = document.createElement("script");
-		script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBa5eT9M-gjFKfpl7NFwNAtbH01CjEZTcU`;
+		script.src = process.env.GOOGLSAPIKEY;
 		script.async = true;
 		script.defer = true;
 		document.head.appendChild(script);
