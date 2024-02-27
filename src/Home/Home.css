@@ -1,0 +1,57 @@
+.fd {
+	background-image: url(./healthCare.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* For screens smaller than 600px (e.g. iPhone XR) */
+@media (max-width: 600px) {
+	.fd {
+		height: 50vh;
+		width: 100vw;
+	}
+	.h {
+		font-size: 1.1rem;
+		padding-bottom: 0%;
+		opacity: 90%;
+	}
+	.f {
+		font-size: 0.6rem;
+	}
+}
+
+/* For screens between 600px and 1024px (e.g. iPad) */
+@media (min-width: 600px) and (max-width: 1024px) {
+	.fd {
+		height: 70vh;
+		width: 100vw;
+	}
+	.h {
+		font-size: 1.8rem;
+		padding-bottom: 5%;
+	}
+	.f {
+		font-size: 1rem;
+	}
+}
+
+/* For screens larger than 1024px */
+@media (min-width: 1024px) {
+	.fd {
+		height: 65vh;
+		width: 100vw;
+	}
+	.h {
+		font-size: 2.9rem;
+
+		opacity: 90%;
+	}
+	.f {
+		font-size: 1.3rem;
+	}
+}
+.iframe-container {
+	height: 500px; /* Set the desired height of the iframe container */
+	overflow: auto; /* Enable scrolling within the iframe */
+}
