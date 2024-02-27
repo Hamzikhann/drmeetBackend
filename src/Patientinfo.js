@@ -25,7 +25,7 @@ export default function Patientinfo({ patient, patientAppoint }) {
 			id
 		};
 		axios
-			.post(`http://localhost:5002/api/patient/detail`, pid)
+			.post(`https://drmeetbackend.onrender.com/api/patient/detail`, pid)
 			.then((response) => {
 				response.data.patient.selectedHistory = JSON.parse(response.data.patient.selectedHistory);
 				setPatientInfo(response.data.patient);

@@ -119,7 +119,7 @@ const Timetable = ({ ada }) => {
 
 	const updateAppointments = (data) => {
 		axios
-			.put(`http://localhost:5002/api/doctor/update`, data)
+			.put(`https://drmeetbackend.onrender.com/api/doctor/update`, data)
 			.then((response) => {
 				if (response) {
 					if (email) {

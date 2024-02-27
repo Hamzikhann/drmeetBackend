@@ -89,7 +89,7 @@ function Emergency() {
 		};
 
 		axios
-			.post("http://localhost:5002/api/emergency/create", emergencyObj)
+			.post("https://drmeetbackend.onrender.com/api/emergency/create", emergencyObj)
 			.then((response) => {
 				console.log(response);
 				const notify = () =>

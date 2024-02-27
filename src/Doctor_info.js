@@ -57,7 +57,7 @@ export default function Doctor_info({ setAuthHeader, patientAppointment }) {
 		const accessToken = sessionStorage.getItem("token"); // Replace with your actual token
 		setAuthHeader(accessToken);
 		axios
-			.post(`http://localhost:5002/api/doctor/find/${id}`)
+			.post(`https://drmeetbackend.onrender.com/api/doctor/find/${id}`)
 			.then((response) => {
 				setDoctorAppointments(response.data.data);
 			})
@@ -84,7 +84,7 @@ export default function Doctor_info({ setAuthHeader, patientAppointment }) {
 			id
 		};
 		axios
-			.post(`http://localhost:5002/api/emergency/list`, idd)
+			.post(`https://drmeetbackend.onrender.com/api/emergency/list`, idd)
 			.then((response) => {
 				if (response.data.data.length != 0) {
 					setEnd(response.data.data[0].emergency.location);
@@ -114,7 +114,7 @@ export default function Doctor_info({ setAuthHeader, patientAppointment }) {
 		const accessToken = sessionStorage.getItem("token"); // Replace with your actual token
 		setAuthHeader(accessToken);
 		axios
-			.post(`http://localhost:5002/api/doctor/detail`, doctorid)
+			.post(`https://drmeetbackend.onrender.com/api/doctor/detail`, doctorid)
 			.then((response) => {
 				setDoc(response.data.doctor);
 				let appoint = JSON.parse(response.data.doctor.appointments);
@@ -239,7 +239,7 @@ export default function Doctor_info({ setAuthHeader, patientAppointment }) {
 			appointmentId
 		};
 		axios
-			.post("http://localhost:5002/api/patient/delete/appointment", id)
+			.post("https://drmeetbackend.onrender.com/api/patient/delete/appointment", id)
 			.then((response) => {})
 			.catch((err) => {
 				const notify = () => toast(`${err.response.data.message}`);

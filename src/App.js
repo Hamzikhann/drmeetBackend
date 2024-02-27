@@ -161,7 +161,7 @@ function App() {
 
 	const auth = (data) => {
 		axios
-			.post("http://localhost:5002/api/auth/login", data)
+			.post("https://drmeetbackend.onrender.com/api/auth/login", data)
 			.then((response) => {
 				sessionStorage.removeItem("pid");
 				sessionStorage.removeItem("docid");
@@ -234,7 +234,7 @@ function App() {
 		setAuthHeader(accessToken);
 
 		await axios
-			.post("http://localhost:5002/api/patient/create/appointment", data)
+			.post("https://drmeetbackend.onrender.com/api/patient/create/appointment", data)
 			.then((response) => {
 				let message = response.data ? response.data.message : response.message;
 				const notify = () =>
@@ -269,7 +269,7 @@ function App() {
 
 	const postuser = (data) => {
 		axios
-			.post("http://localhost:5002/api/users/post/user", data)
+			.post("https://drmeetbackend.onrender.com/api/users/post/user", data)
 			.then((response) => {
 				if (response) {
 					navigateToForm(response.data.newuser);
@@ -315,7 +315,7 @@ function App() {
 
 	const getdoc = () => {
 		axios
-			.get("http://localhost:5002/api/doctor/")
+			.get("https://drmeetbackend.onrender.com/api/doctor/")
 			.then((response) => {
 				setdoctor(response.data);
 			})
@@ -338,7 +338,7 @@ function App() {
 
 	const getpat = () => {
 		axios
-			.get("http://localhost:5002/api/patient")
+			.get("https://drmeetbackend.onrender.com/api/patient")
 			.then((response) => {
 				setpatient(response.data.patient);
 			})

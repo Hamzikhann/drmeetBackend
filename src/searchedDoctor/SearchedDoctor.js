@@ -85,7 +85,7 @@ export default function SearchedDoctor({ oncardclick, match }) {
 			ids: ids
 		};
 		axios
-			.post("http://localhost:5002/api/doctor/list", doctorId)
+			.post("https://drmeetbackend.onrender.com/api/doctor/list", doctorId)
 			.then((response) => {
 				console.log(response);
 				setMessage(response.data.message);
